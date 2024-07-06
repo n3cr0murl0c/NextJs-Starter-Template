@@ -1,0 +1,50 @@
+{
+  "usesTypeScript": true,
+  "usesStyledComponents": true,
+  "testLibrary": "None",
+  "component": {
+    "default": {
+      "path": "src/components",
+      "customTemplates": {
+        "component": "./Templates/components/TemplateName.tsx",
+        "style": "./Templates/components/TemplateName.styles.css"
+      },
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
+    "api-route": {
+      "path": "src/app/api",
+      "customTemplates": {
+        "component": "./Templates/api/route.ts"
+      },
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
+    "path-with-layout": {
+      "path": "src/app",
+      "customTemplates": {
+        "component": "./Templates/path-with-layout/page.tsx",
+        "style": "./Templates/path-with-layout/layout.tsx"
+      },
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
+    "path": {
+      "path": "src/app",
+      "customTemplates": {
+        "component": "./Templates/path/page.tsx",
+        "style": "./Templates/path/TemplateName.style.css"
+      },
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    }
+  }
+}
