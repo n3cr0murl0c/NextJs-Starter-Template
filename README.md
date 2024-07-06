@@ -36,6 +36,7 @@ More information in our documentation:
 https://pris.ly/d/getting-started
  ```
 
+Also dont forget to add your domain to next.config.mjs so images load correctly
 
 # Runtime ENV Variables
 
