@@ -1,4 +1,4 @@
-# Server Side Actions
+# Put all your Server Side Actions here
 
 Para ser ejecutados en servidor desde un componente cliente, por el momento funciona solamente con metodos post(mutaciones de información)
 
