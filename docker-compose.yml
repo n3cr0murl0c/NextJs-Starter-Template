@@ -12,8 +12,8 @@ services:
 
     depends_on:
       - database
-    # env_file:
-    #   - ./webstore/.env
+    env_file:
+      - ./.env
     networks:
       #TO BE USED WITH NGINX PROXY MANAGER, comment if your are exposing it directly
       frontend:
@@ -30,11 +30,9 @@ services:
       #Persistent database under prisma directory
       - ./prisma/database/:/var/lib/postgresql/data
       
-    environment:
-      TZ: America/Guayaquil
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: randompassword
-      POSTGRES_DB: mydb
+    env_file:
+      - ./.env
+      
     networks:
       backend:
 
