@@ -24,3 +24,10 @@ bunx generate-react-cli component index --type=path-with-layout
 ```
 bunx generate-react-cli component route1 --type=api-route
 ```
+
+# Runtime ENV Variables
+
+```properties
+DATABASE_URL="postgresql://johndoe:randompassword@localhost:5432/mydb?schema=public"
+NEXT_PUBLIC_BASE_URL=mydomain.com
+```
