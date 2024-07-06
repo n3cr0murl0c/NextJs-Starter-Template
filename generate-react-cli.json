@@ -24,6 +24,16 @@
       "withStory": false,
       "withLazy": false
     },
+    "provider": {
+      "path": "src/providers",
+      "customTemplates": {
+        "component": "./Templates/providers/TemplateName.tsx"
+      },
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
     "path-with-layout": {
       "path": "src/app",
       "customTemplates": {
