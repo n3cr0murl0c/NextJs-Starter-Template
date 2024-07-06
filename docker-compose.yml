@@ -1,0 +1,49 @@
+services:
+  storefront:
+    container_name: nextJs-Ventrue-Starter-Template-Container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    #AS This compose is made to be used with a proxy, ports are not being exposed
+    # if you need any port mapping from container<-> host, uncomment
+    # ports:
+    #   - 8000:8000
+
+    depends_on:
+      - database
+    # env_file:
+    #   - ./webstore/.env
+    networks:
+      #TO BE USED WITH NGINX PROXY MANAGER, comment if your are exposing it directly
+      frontend:
+        ipv4_address: 192.168.1.24
+
+  database:
+    image: postgres:latest
+    container_name: nextJs-Ventrue-Postgres
+    restart: unless-stopped
+    volumes:
+      - ./backups:/docker-entrypoint-initdb.d
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      #Persistent database under prisma directory
+      - ./prisma/database/:/var/lib/postgresql/data
+      
+    environment:
+      TZ: America/Guayaquil
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: randompassword
+      POSTGRES_DB: mydb
+    networks:
+      backend:
+
+networks:
+  #TO BE USED WITH NGINX PROXY MANAGER, comment if your are exposing it directly
+  frontend:
+    name: proxy
+    external: true
+
+  #Internal network of the stack
+  backend:
+    name:  nextJs-Ventrue-network
