@@ -25,7 +25,7 @@ export default async function TemplateName(params: TemplateNameProps) {
 }
 
 /** @type{import('@mui/material').SxProps}*/
-export const styles = {
+const styles = {
   TemplateName: {
     border: "1px dashed red",
   },
