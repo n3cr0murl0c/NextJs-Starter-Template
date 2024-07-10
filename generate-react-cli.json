@@ -45,11 +45,21 @@
       "withStory": false,
       "withLazy": false
     },
-    "path": {
+    "server-path": {
       "path": "src/app",
       "customTemplates": {
         "component": "./Templates/path/page.tsx",
         "style": "./Templates/path/TemplateName.style.css"
+      },
+      "withStyle": true,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
+    "client-path": {
+      "path": "src/app",
+      "customTemplates": {
+        "component": "./Templates/client-path/page.tsx"
       },
       "withStyle": true,
       "withTest": false,
