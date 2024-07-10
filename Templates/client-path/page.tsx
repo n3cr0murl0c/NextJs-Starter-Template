@@ -8,9 +8,7 @@ type Props = {
   searchParams: { [key: string]: string | string[] | undefined };
 };
 
-interface TemplateNameProps {
-  TemplateName: string;
-}
+interface TemplateNameProps {}
 export default async function TemplateName(params: TemplateNameProps) {
   return (
     <Box
