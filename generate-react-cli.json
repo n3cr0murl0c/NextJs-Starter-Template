@@ -61,7 +61,7 @@
       "customTemplates": {
         "component": "./Templates/client-path/page.tsx"
       },
-      "withStyle": true,
+      "withStyle": false,
       "withTest": false,
       "withStory": false,
       "withLazy": false
