@@ -40,15 +40,14 @@ ENV NEXT_TELEMETRY_DISABLED 1
 #ENV TZ="America/New_York"
 RUN addgroup --system --gid 1002 nodejs
 RUN adduser --system --uid 1002 nextjs
-COPY --from=build-compile-stage /app/website/public ./public
 
-# Set the correct permission for prerender cache
-RUN mkdir .next
-RUN chown nextjs:nodejs .next
+#ADD YOUR ENV HERE
+
 # Automatically leverage output traces to reduce image size
 # https://nextjs.org/docs/advanced-features/output-file-tracing
 COPY --from=build-compile-stage --chown=nextjs:nodejs /app/website/.next/standalone ./
-COPY --from=build-compile-stage --chown=nextjs:nodejs /app/website/.next/static ./.next/static
+COPY --from=build-compile-stage --chown=nextjs:nodejs /app/website/public /app/website/public
+COPY --from=build-compile-stage --chown=nextjs:nodejs /app/website/.next/static /app/website/.next/static
 
 USER nextjs
 
