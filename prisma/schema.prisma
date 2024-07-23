@@ -13,3 +13,10 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  // next-auth requires id string as cuid
+  id    String     @id @default(cuid())
+  email String  @unique
+  name  String?
+  password  String
+}
