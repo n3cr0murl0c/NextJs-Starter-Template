@@ -56,6 +56,16 @@
       "withStory": false,
       "withLazy": false
     },
+    "icon": {
+      "path": "src/components/icons",
+      "customTemplates": {
+        "component": "./Templates/icon/TemplateName.tsx"
+      },
+      "withStyle": false,
+      "withTest": false,
+      "withStory": false,
+      "withLazy": false
+    },
     "client-path": {
       "path": "src/app",
       "customTemplates": {
